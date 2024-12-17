@@ -1,14 +1,19 @@
 pipeline {
   agent any
   stages {
-    stage('version') {
+    stage('Collect') {
       steps {
-        sh 'python3 --version'
+             echo 'hello.py'
       }
     }
-    stage('hello') {
+    stage('Validation') {
       steps {
-        sh 'python3 hello.py'
+        echo 'hello.py'
+      }
+    }
+    stage('Deploy') {
+      steps {
+        echo 'hello.py'
       }
     }
   }
