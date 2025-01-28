@@ -3,12 +3,12 @@ pipeline {
   stages {
     stage('version') {
       steps {
-        bat 'python3 --version'
+        bat 'python --version'  // Remplace 'python3' par 'python' sur Windows
       }
     }
     stage('hello') {
       steps {
-        bat 'python3 hello.py'
+        bat 'python hello.py'  // Remplace 'python3' par 'python' pour exécuter ton script
       }
     }
   }
