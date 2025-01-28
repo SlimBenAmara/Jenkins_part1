@@ -28,7 +28,7 @@ else:
 
 
 
-# if 'df1' in locals() and 'df2' in locals():
-#     print(df1 + df2)
-# else:
-#     print("df1 or df2 is not defined properly.")
+if 'df1' in locals() and 'df2' in locals():
+    print(df1 + df2)
+else:
+    print("df1 or df2 is not defined properly.")
