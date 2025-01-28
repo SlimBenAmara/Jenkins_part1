@@ -11,4 +11,8 @@ pd.set_option('display.max_rows', 10)
 print('Hello World')
 
 df2 = pd.DataFrame({'b': [5, 2, 0], 'a': [1, 2, 8]}, columns = ['b', 'a'], index = [2, 1, 0])
-print(df1 + df2)
+
+if 'df1' in locals() and 'df2' in locals():
+    print(df1 + df2)
+else:
+    print("df1 or df2 is not defined properly.")
