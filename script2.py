@@ -14,7 +14,7 @@ df_string = os.environ.get('RESULT')
 # Check if the environment variable is properly retrieved
 if df_string:
     # Clean up any extra whitespace or newlines
-    df_string = df_string.strip()//.trim().split("\n").findAll { it.contains(",") }.join("\n")
+    df_string = df_string.strip()#.trim().split("\n").findAll { it.contains(",") }.join("\n")
     
     # Convert the CSV string back to a DataFrame using StringIO
     try:
