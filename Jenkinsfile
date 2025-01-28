@@ -18,12 +18,12 @@ pipeline {
     stage('Scripts executions') {
       steps {
         script {
-          // Capture the output of hello.py into a variable
+          // Capture the output of hello.py, excluding the command prompt and non-CSV output
           def helloOutput = bat(script: 'python hello.py', returnStdout: true).trim()
-
-          // Echo the variable to ensure it's set properly
+          
+          // Debugging: echo the captured output to make sure it's just the CSV string
           echo "Captured helloOutput: ${helloOutput}"
-
+          
           // Set the environment variable RESULT with the DataFrame CSV string
           withEnv(["RESULT=${helloOutput}"]) {
             // Call script2.py to read the RESULT environment variable
