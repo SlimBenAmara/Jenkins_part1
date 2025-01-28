@@ -18,7 +18,7 @@ pipeline {
       steps {
         script {
           // Capture the output of hello.py
-          def csvData = bat(script: 'python hello.py', returnStdout: true)//.trim().split("\n").findAll { it.contains(",") }.join("\n")
+          def csvData = bat(script: 'python hello.py', returnStdout: true).trim().split("\n").findAll { it.contains(",") }.join("\n")
  
           // Set the environment variable RESULT with the cleaned CSV data
           withEnv(["RESULT=${csvData}"]) {
