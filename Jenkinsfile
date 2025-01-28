@@ -15,9 +15,10 @@ pipeline {
         bat 'python --version'  // Vérifier la version de Python
       }
     }
-    stage('hello') {
+    stage('Scripts executions') {
       steps {
         bat 'python hello.py'  // Exécuter ton script Python
+        bat 'python script2.py'  // Exécuter ton script Python 
       }
     }
   }
