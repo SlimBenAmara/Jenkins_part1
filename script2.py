@@ -26,6 +26,7 @@ if df_string:
 else:
     print("RESULT environment variable is not set.")
 
+df1 = pandas.DataFrame({'a': [1, 3, 4], 'b': [5, 3, 1]}, columns = ['a', 'b'])
 
 
 if 'df1' in locals() and 'df2' in locals():
