@@ -2,9 +2,9 @@ pipeline {
   agent any
   stages {
     stage('version') {
-      steps {
-        bat 'python3 --version'
-      }
+    steps {
+        bat 'python --version'  // Utilise 'python' au lieu de 'python3' sur Windows
+    }
     }
     stage('hello') {
       steps {
