@@ -14,11 +14,14 @@ df_string = os.environ.get('RESULT')
 # Check if the environment variable is properly retrieved
 if df_string:
     # Clean up any extra whitespace or newlines
-    df_string = df_string.strip()#.trim().split("\n").findAll { it.contains(",") }.join("\n")
-    
+    df_string = df_string.strip().split("\n")
+    filtered_data = [line for line in df_string if ',' in line]
+    csv_data_joined = "\n".join(filtered_data)
     # Convert the CSV string back to a DataFrame using StringIO
+
+    
     try:
-        df2 = pd.read_csv(StringIO(df_string))
+        df2 = pd.read_csv(StringIO(csv_data_joined))
         print("Retrieved DataFrame:")
         print(df2)
     except Exception as e:
