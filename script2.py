@@ -26,10 +26,10 @@ if df_string:
 else:
     print("RESULT environment variable is not set.")
 
-df1 = pandas.DataFrame({'a': [1, 3, 4], 'b': [5, 3, 1]}, columns = ['a', 'b'])
+df1_ = pandas.DataFrame({'a': [1, 3, 4], 'b': [5, 3, 1]}, columns = ['a', 'b'])
 
 
-if 'df1' in locals() and 'df2' in locals():
-    print(df1 + df2)
+if 'df1_' in locals() and 'df2' in locals():
+    print(df1_ + df2)
 else:
-    print("df1 or df2 is not defined properly.")
+    print("df1_ or df2 is not defined properly.")
