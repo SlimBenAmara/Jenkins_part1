@@ -1,14 +1,20 @@
 pipeline {
   agent any
   stages {
+    stage('Install dependencies') {
+      steps {
+        bat 'pip install pandas'  // Installer pandas
+        bat 'python -c "import pandas; print(pandas.__version__)"'  // Vérifier l'installation de pandas
+      }
+    }
     stage('version') {
       steps {
-        bat 'python --version'  // Remplace 'python3' par 'python' sur Windows
+        bat 'python --version'  // Vérifier la version de Python
       }
     }
     stage('hello') {
       steps {
-        bat 'python hello.py'  // Remplace 'python3' par 'python' pour exécuter ton script
+        bat 'python hello.py'  // Exécuter ton script Python
       }
     }
   }
