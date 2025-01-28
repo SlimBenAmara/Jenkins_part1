@@ -13,11 +13,6 @@ print('Create df1')
 # Create a DataFrame
 df1 = pd.DataFrame({'a': [1, 3, 4], 'b': [5, 3, 1]}, columns=['a', 'b'])
 
-# Convert the DataFrame to CSV format (as a string)
+# Convert the DataFrame to CSV format (as a string) and print it
 df_string = df1.to_csv(index=False)
-
-# Print the CSV string to verify its contents (for debugging purposes)
-print("CSV string from df1:\n", df_string)
-
-# Store the CSV string into an environment variable
-os.environ['RESULT'] = df_string
+print(df_string)  # Ensure that only the CSV string is printed
