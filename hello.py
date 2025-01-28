@@ -11,7 +11,8 @@ pd.set_option('display.max_rows', 10)
 
 print('Hello World')
 df1 = pd.DataFrame({'a': [1, 3, 4], 'b': [5, 3, 1]}, columns = ['a', 'b'])
-os.environ['RESULT'] = df1  # Store in environment variable
+df1_string = df1.to_csv(index=False)
+os.environ['RESULT'] = df1_string  # Store in environment variable
 #df2 = pd.DataFrame({'b': [5, 2, 0], 'a': [1, 2, 8]}, columns = ['b', 'a'], index = [2, 1, 0])
 #print(df1 + df2)
 
