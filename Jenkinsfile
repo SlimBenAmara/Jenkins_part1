@@ -18,8 +18,15 @@ pipeline {
     stage('Scripts executions') {
       steps {
         script {
+          // Capture the output of hello.py into a variable
           def helloOutput = bat(script: 'python hello.py', returnStdout: true).trim()
+
+          // Echo the variable to ensure it's set properly
+          echo "Captured helloOutput: ${helloOutput}"
+
+          // Set the environment variable RESULT with the DataFrame CSV string
           withEnv(["RESULT=${helloOutput}"]) {
+            // Call script2.py to read the RESULT environment variable
             bat 'python script2.py'
           }
         }
