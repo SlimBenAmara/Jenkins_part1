@@ -17,8 +17,12 @@ pipeline {
     }
     stage('Scripts executions') {
       steps {
-        bat 'python hello.py'  // Exécuter ton script Python
-        bat 'python script2.py'  // Exécuter ton script Python 
+        script {
+          def helloOutput = bat(script: 'python hello.py', returnStdout: true).trim()
+          withEnv(["RESULT=${helloOutput}"]) {
+            bat 'python script2.py'
+          }
+        }
       }
     }
   }
