@@ -14,5 +14,5 @@ print('Create df1')
 df1 = pd.DataFrame({'a': [1, 3, 4], 'b': [5, 3, 1]}, columns=['a', 'b'])
 
 # Convert the DataFrame to CSV format (as a string) and print it
-df_string = df1.to_csv(index=False, header=True , sep=',')
+df_string = df1.to_csv(index=False)
 print(df_string)  # Ensure that only the CSV string is printed
