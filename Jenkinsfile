@@ -9,16 +9,12 @@ pipeline {
         bat 'python -c "import pandas; print(pandas.__version__)"'
       }
     }
-    stage('version') {
-      steps {
-        bat 'python --version'
-      }
-    }
+
     stage('Scripts executions') {
       steps {
         script {
           // Capture the output of hello.py
-          def csvData = bat(script: 'python hello.py', returnStdout: true)//.trim().split("\n").findAll { it.contains(",") }.join("\n")
+          def csvData = bat(script: 'python hello.py', returnStdout: true)
  
           // Set the environment variable RESULT with the cleaned CSV data
           withEnv(["RESULT=${csvData}"]) {
